@@ -1,3 +1,14 @@
 {% for movies in movies_objects %}
 <div>{{movies.name}} </div>
 {% endfor %}
+
+
+{% if movies_objects.has_previous %}
+<a href="?page=1">first</a>
+<a href="?page={{movie_objects.get}}">previous</a>
+{% endif %}
+
+{% if movies_objects.has_next %}
+<a href="">next</a>
+<a href="">last</a>
+{% endif %}

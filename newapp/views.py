@@ -6,6 +6,8 @@ from django.core.paginator import Paginator
 def movie_list(request):
     movies_objects = movies.objects.all()
     paginator = Paginator(movies_objects, 3)
+    page = request.GET.get('page')
+    movies_objects = paginator.get_page(page)
     context = {
         'movies_objects':movies_objects
     }
